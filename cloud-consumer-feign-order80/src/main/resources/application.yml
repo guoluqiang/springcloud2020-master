@@ -1,0 +1,19 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false #表示是否将自己注册进eurekaServer默认为true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+#设置fagin客户端超时时间，（openfegin默认支持ribbon）
+ribbon:
+  # 建立链接时间
+  ReadTimeout: 5000
+  # 建立链接时间从服务器读取到可以资源所用时间
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    #fegin日志以什么级别监控那个端口
+    com.guo.springcloud.service.OrderFeignController: debug
